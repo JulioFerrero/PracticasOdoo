@@ -81,69 +81,42 @@ Y en `views/templates.xml`:
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record id="view_component_form" model="ir.ui.view">
-        <field name="name">gestio.component.form</field>
-        <field name="model">gestio.component</field>
-        <field name="arch" type="xml">
-            <form string="Component">
-                <sheet>
-                    <div class="oe_title">
-                        <h1>
-                            <table>
-                                <tr>
-                                    <td style="padding-right:10px">
-                                        <field name="name" required="1" placeholder="Marco 1DIN"/>
-                                    </td>
-                                </tr>
-                            </table>
-                        </h1>
-                    </div>
-                    <notebook colspan="4">
-                        <page name="dades_component" string="Informació del component">
-                            <group col="4" colspan="4" name="info_component">
-                                <field name="marca"/>
-                                <field name="color"/>
-                                <field name="is_offer"/>
-                            </group>
-                        </page>
-                    </notebook>
-                </sheet>
-            </form>
-        </field>
-    </record>
-    <record id="view_component_tree" model="ir.ui.view">
-        <field name="name">gestio.component.tree></field>
-        <field name="model">gestio.component</field>
-        <field name="arch" type="xml">
-            <tree string="Gestió de components">
-                <field name="name"></field>
-                <field name="marca"></field>
-                <field name="color"></field>
-                <field name="is_offer"></field>
-            </tree>
-        </field>
-    </record>
-    <record id="action_view_component" model="ir.actions.act_window">
-        <field name="name">Gestió de components</field>
-        <field name="res_model">gestio.component</field>
-        <field name="view_mode">tree,form</field>
-        <field name="domain">[]</field>
-        <field name="help" type="html">
-            <p class="oe_view_nocontent_create">Crea un nou component</p>
-        </field>
-    </record>
-    <record id="action_view_marca" model="ir.actions.act_window">
-        <field name="name">Gestió de marques</field>
-        <field name="res_model">gestio.marca</field>
-        <field name="view_mode">tree,form</field>
-        <field name="domain">[]</field>
-        <field name="help" type="html">
-            <p class="oe_view_nocontent_create">Crea una nova marca></p>
-        </field>
-    </record>
-    <menuitem id="menu_root" name="Gestió de components" sequence="1"/>
-    <menuitem id="sub_menu_component" name="Components" sequence="1" parent="menu_root" action="action_view_component"/>
-    <menuitem id="sub_menu_marca" name="Marques" parent="menu_root" action="action_view_marca"></menuitem>
+	<record id="view_component_form" model="ir.ui.view">
+		<field name="name">gestio.component.form</field>
+		<field name="model">gestio.component</field>
+		<field name="arch" type="xml">
+			<form string="Formulari de venda">
+				<group col="2" colspan="2">
+					<field name="name"/>
+					<field name="color"/>
+					<field name="is_offer"/>
+				</group>
+			</form>
+		</field>
+	</record>
+	<record id="view_component_tree" model="ir.ui.view">
+		<field name="name">gestio.component.tree></field>
+		<field name="model">gestio.component</field>
+		<field name="arch" type="xml">
+			<tree string="Gestió de components">
+				<field name="name"></field>
+				<field name="marca"></field>
+				<field name="color"></field>
+				<field name="is_offer"></field>
+			</tree>
+		</field>
+	</record>
+	<record id="action_view_component" model="ir.actions.act_window">
+		<field name="name">Gestió de components</field>
+		<field name="res_model">gestio.component</field>
+		<field name="view_mode">tree,form</field>
+		<field name="domain">[]</field>
+		<field name="help" type="html">
+			<p class="oe_view_nocontent_create">Crea un nou component</p>
+		</field>
+	</record>
+	<menuitem id="menu_root" name="Gestió de components" sequence="1"/>
+	<menuitem id="sub_menu_component" name="Components" sequence="1" parent="menu_root" action="action_view_component"/>
 </odoo>
 ```
 Si todo ha salido como debería, podremos instalar el módulo y en 'Ajustes&gt;Técnico&gt;Modelos' y buscamos 'gestio' podremos ver nuestro modelo con los elementos que hemos creado.
