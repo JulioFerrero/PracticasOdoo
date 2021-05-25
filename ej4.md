@@ -66,7 +66,7 @@ COLOR = [
 class Component(models.Model):
 	_name = 'gestio.component'
 	name = fields.Char(string='Nom del component', required=True)
-	marca = fields.Many2one('gestio.marca', string='Marca')
+	marca = fields.Char(string='Marca', required=True)
 	color = fields.Selection(COLOR, string='Color', default='negre')
 	is_offer = fields.Boolean('Té descompte?')
 ```
