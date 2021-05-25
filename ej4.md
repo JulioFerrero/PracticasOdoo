@@ -19,7 +19,7 @@ Una vez finalizada la edición del archivo, reiniciamos odoo:
     sudo systemctl restart odoo
 Si todo ha ido correctamente podemos crear el esqueleto de nuestro módulo con:
 
-    odoo scaffold /home/ubuntu/odoo-dev/addons/modulAutomatic
+    odoo scaffold /home/ubuntu/odoo-dev/addons/modul_automatic
 
 > Con scaffold, la ruta que hemos asignado en el archivo de configuración y el nombre que le queremos dar al módulo, podemos crear las bases. 
 
@@ -146,6 +146,6 @@ Y en `views/templates.xml`:
     <menuitem id="sub_menu_marca" name="Marques" parent="menu_root" action="action_view_marca"></menuitem>
 </odoo>
 ```
-Si todo a salido como deberia, podremos instalar el módulo y en `Ajustes>Técnico>Modelos` y buscamos `gestio` podremos ver nuestro módelo con los elementos que hemos creado.
+Si todo ha salido como debería, podremos instalar el módulo y en 'Ajustes&gt;Técnico&gt;Modelos' y buscamos 'gestio' podremos ver nuestro modelo con los elementos que hemos creado.
 
 ![imatge](https://user-images.githubusercontent.com/61594022/119538019-f3e5eb00-bd8a-11eb-9e1c-902bfce0b111.png)
